@@ -205,3 +205,14 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Logs and output
+*.log
+logs/
+data/output/*.json
+data/output/*.csv
+data/sample_resumes/*.pdf
+data/sample_resumes/*.docx
+
+# Secrets
+config/secrets.yaml
