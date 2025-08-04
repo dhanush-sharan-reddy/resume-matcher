@@ -1,0 +1,23 @@
+Senior Python Developer
+
+We are seeking an experienced Senior Python Developer to join our team.
+
+Key Responsibilities:
+- Develop Python applications and web services
+- Work with machine learning models and data analysis
+- Collaborate with cross-functional teams
+- Write clean, maintainable code
+
+Required Skills:
+- 5+ years Python programming experience
+- Django or Flask framework knowledge
+- SQL database experience (PostgreSQL, MySQL)
+- Familiarity with machine learning libraries (scikit-learn, pandas)
+- Version control (Git)
+- Experience with cloud platforms (AWS, Azure)
+- Strong problem-solving skills
+
+Preferred Qualifications:
+- Bachelor's degree in Computer Science or related field
+- Docker experience
+- Agile development methodology

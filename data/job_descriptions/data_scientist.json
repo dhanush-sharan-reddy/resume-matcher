@@ -1,0 +1,8 @@
+{
+  "title": "Data Scientist",
+  "company": "Tech Corp",
+  "description": "Looking for a Data Scientist to analyze complex datasets and develop machine learning models. Must have Python, R, SQL experience and statistics background.",
+  "keywords": ["python", "r", "machine learning", "data science", "sql", "statistics", "pandas", "numpy"],
+  "requirements": ["Master's degree", "3+ years experience", "Python/R proficiency"],
+  "salary_range": "$90,000 - $130,000"
+}
