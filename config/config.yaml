@@ -1,0 +1,16 @@
+# Resume Matcher Configuration
+
+app:
+  name: "Resume Matcher"
+  version: "1.0.0"
+
+similarity_weights:
+  tfidf: 0.4
+  jaccard: 0.3
+  keyword: 0.3
+
+default_threshold: 0.3
+
+output:
+  save_json: true
+  save_csv: true
