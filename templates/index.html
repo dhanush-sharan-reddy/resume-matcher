@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Matcher - AI-Powered Resume Screening</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Resume Matcher</h1>
+            <p class="header__subtitle">AI-powered resume screening to find the perfect candidates</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Job Description Section -->
+            <section class="section" id="job-description-section">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>1. Job Description</h2>
+                        <p>Enter or upload the job description to match against resumes</p>
+                    </div>
+                    <div class="card__body">
+                        <div class="form-group">
+                            <label for="job-description" class="form-label">Paste Job Description</label>
+                            <textarea 
+                                id="job-description" 
+                                class="form-control" 
+                                rows="8" 
+                                placeholder="Paste the job description here... (e.g., We are looking for a Senior Python Developer with 5+ years of experience in Django, AWS, and machine learning...)"
+                            ></textarea>
+                        </div>
+                        <div class="file-upload-section">
+                            <p class="text-center">OR</p>
+                            <div class="file-upload-zone" id="job-file-zone">
+                                <div class="file-upload-content">
+                                    <div class="file-icon">📄</div>
+                                    <p>Drag & drop job description file here</p>
+                                    <p class="file-upload-hint">Supports PDF, DOCX, TXT files</p>
+                                    <button type="button" class="btn btn--outline" id="job-file-btn">Browse Files</button>
+                                </div>
+                                <input type="file" id="job-file-input" accept=".pdf,.docx,.txt" hidden>
+                            </div>
+                            <div id="job-file-status" class="file-status hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resume Upload Section -->
+            <section class="section" id="resume-upload-section">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>2. Resume Upload</h2>
+                        <p>Upload one or multiple resume files for matching</p>
+                    </div>
+                    <div class="card__body">
+                        <div class="file-upload-zone large" id="resume-file-zone">
+                            <div class="file-upload-content">
+                                <div class="file-icon">📁</div>
+                                <p>Drag & drop resume files here</p>
+                                <p class="file-upload-hint">Supports PDF and DOCX files • Multiple files allowed</p>
+                                <button type="button" class="btn btn--primary" id="resume-file-btn">Browse Files</button>
+                            </div>
+                            <input type="file" id="resume-file-input" accept=".pdf,.docx" multiple hidden>
+                        </div>
+                        <div id="resume-file-list" class="file-list hidden"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Section -->
+            <section class="section" id="action-section">
+                <div class="action-buttons">
+                    <button type="button" class="btn btn--primary btn--lg" id="match-btn" disabled>
+                        <span class="btn-text">Match Resumes</span>
+                        <span class="btn-loading hidden">
+                            <span class="spinner"></span>
+                            Processing...
+                        </span>
+                    </button>
+                    <button type="button" class="btn btn--outline btn--lg" id="clear-btn">Clear All</button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="section hidden" id="results-section">
+                <div class="card">
+                    <div class="card__header">
+                        <h2>3. Matching Results</h2>
+                        <p>Candidates ranked by compatibility score</p>
+                    </div>
+                    <div class="card__body">
+                        <div id="results-container"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Resume Matcher. Built with AI-powered matching algorithms.</p>
+            <div class="footer-links">
+                <a href="#" target="_blank">Documentation</a>
+                <a href="#" target="_blank">API</a>
+                <a href="#" target="_blank">Support</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

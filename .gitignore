@@ -216,3 +216,10 @@ data/sample_resumes/*.docx
 
 # Secrets
 config/secrets.yaml
+
+# Flask uploads and cache
+uploads/
+*.pyc
+__pycache__/
+instance/
+.webassets-cache
