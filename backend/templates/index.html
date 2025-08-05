@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Matcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Resume Matcher</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('upload_job') }}" method="post" enctype="multipart/form-data">
+        <label>Upload Job Description:</label>
+        <input type="file" name="job_file" required>
+        <button type="submit">Upload Job</button>
+    </form>
+    <form action="{{ url_for('upload_resumes') }}" method="post" enctype="multipart/form-data">
+        <label>Upload Resumes:</label>
+        <input type="file" name="resume_files" multiple required>
+        <button type="submit">Upload Resumes</button>
+    </form>
+    <form action="{{ url_for('index') }}" method="post">
+        <button type="submit" name="match" value="1">Run Matching</button>
+    </form>
+
+    {% if results %}
+    <h2>Results</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Candidate</th>
+            <th>Score</th>
+            <th>Email</th>
+            <th>Skills</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.candidateName }}</td>
+            <td>{{ result.compositeScore }}</td>
+            <td>{{ result.email }}</td>
+            <td>{{ result.skills }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>
