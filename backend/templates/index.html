@@ -35,20 +35,35 @@
     <h2>Results</h2>
     <table border="1" cellpadding="5">
         <tr>
+            <th>Rank</th>
             <th>Candidate</th>
-            <th>Score</th>
+            <th>Score (%)</th>
             <th>Email</th>
+            <th>Phone</th>
             <th>Skills</th>
+            <th>Word Count</th>
+            <th>Skills Count</th>
         </tr>
         {% for result in results %}
         <tr>
+            <td>{{ loop.index }}</td>
             <td>{{ result.candidateName }}</td>
             <td>{{ result.compositeScore }}</td>
             <td>{{ result.email }}</td>
+            <td>{{ result.phone }}</td>
             <td>{{ result.skills }}</td>
+            <td>{{ result.wordCount }}</td>
+            <td>{{ result.skillsCount }}</td>
         </tr>
         {% endfor %}
     </table>
+
+    <!-- Download buttons -->
+    <div style="margin-top: 20px;">
+        <h3>Download Results</h3>
+        <a href="{{ url_for('download_csv') }}" class="download-btn">Download as CSV</a>
+        <a href="{{ url_for('download_json') }}" class="download-btn">Download as JSON</a>
+    </div>
     {% endif %}
 </body>
 </html>
